@@ -11,6 +11,7 @@ import {AppConfig} from './models/config';
 import {CloudToolsConfig} from './models/configCloudTools';
 import {DeviceStore, HydrationInfo} from './models/devices';
 import {MixstatusStore, PlayedTrack} from './models/mixStatus';
+import {N8nWebhookConfig} from './models/n8nWebhookConfig';
 import {SaveHistoryConfig} from './models/saveHistoryConfig';
 
 export {
@@ -20,6 +21,7 @@ export {
   DeviceStore,
   HydrationInfo,
   MixstatusStore,
+  N8nWebhookConfig,
   PlayedTrack,
   SaveHistoryConfig,
 };
