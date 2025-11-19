@@ -92,6 +92,38 @@ const Settings = observer(({store}: Props) => {
         </Field>
       </Section>
 
+      <Heading>Integrations</Heading>
+      <Section>
+        <Field
+          top
+          size="sm"
+          name="Send n8n webhook"
+          description="POST track metadata to your n8n webhook endpoint whenever a new track is loaded on a player."
+        >
+          <Checkbox
+            checked={config.n8nWebhook.enabled}
+            onChange={action((e: React.ChangeEvent<HTMLInputElement>) =>
+              set(config.n8nWebhook, {enabled: e.target.checked})
+            )}
+          />
+        </Field>
+        <Field
+          noCenter
+          size="md"
+          name="n8n webhook URL"
+          description="The HTTP endpoint created by your n8n workflow."
+        >
+          <Text
+            type="text"
+            value={config.n8nWebhook.url}
+            placeholder="https://example.com/webhook/track-loaded"
+            onChange={action((e: React.ChangeEvent<HTMLInputElement>) =>
+              set(config.n8nWebhook, {url: e.target.value})
+            )}
+          />
+        </Field>
+      </Section>
+
       <Heading>Now Playing Triggering</Heading>
       <Section>
         <Field

@@ -7,6 +7,7 @@ import {OverlayInstance} from 'src/overlay';
 import {rawJsSerialize} from 'src/shared/store/utils';
 
 import {CloudToolsConfig} from './configCloudTools';
+import {N8nWebhookConfig} from './n8nWebhookConfig';
 import {SaveHistoryConfig} from './saveHistoryConfig';
 
 export class AppConfig {
@@ -25,6 +26,12 @@ export class AppConfig {
   @serializable(object(SaveHistoryConfig))
   @observable
   saveHistory = new SaveHistoryConfig();
+  /**
+   * Configuration for sending webhook events to an n8n server
+   */
+  @serializable(object(N8nWebhookConfig))
+  @observable
+  n8nWebhook = new N8nWebhookConfig();
   /**
    * Should debug events be enabled to be stored and uploaded?
    */

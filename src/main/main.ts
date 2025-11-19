@@ -11,6 +11,7 @@ import * as url from 'url';
 import {runConfigMigrations} from 'main/configMigrations';
 import {registerDebuggingEventsService} from 'main/debugEvents';
 import {setupMenu} from 'main/menu';
+import {setupN8nWebhook} from 'main/n8nWebhook';
 import {startOverlayServer} from 'main/overlayServer';
 import {setupSaveHistory} from 'main/saveHistory';
 import {userInfo} from 'src/shared/sentry/main';
@@ -176,6 +177,7 @@ app.on('ready', async () => {
 
   connectNetworkStore(mainStore, network);
   registerDebuggingEventsService(mainStore, network);
+  setupN8nWebhook(mainStore);
   setupSaveHistory(mainStore);
 });
 
